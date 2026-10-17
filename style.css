@@ -1,0 +1,50 @@
+* { box-sizing: border-box; }
+:root { --ink:#5c477c; --pink:#d77ca8; --lavender:#e8d9f0; --paper:#fffaf7; --line:#b8a0cf; }
+body { margin:0; min-height:100vh; padding:24px; display:grid; place-items:center; background:linear-gradient(135deg,#f7f1fa,#fff8f5); color:var(--ink); font-family:'Quicksand',sans-serif; }
+.birthday-site { width:min(1180px,100%); }
+.slide { display:none; overflow:hidden; min-height:650px; background:var(--paper); border:1.5px solid var(--line); border-radius:18px; box-shadow:0 16px 45px #8d6aa51a; position:relative; animation:appear .35s ease; }
+.slide.active { display:block; }
+@keyframes appear { from{opacity:.4;transform:translateY(5px)} to{opacity:1;transform:translateY(0)} }
+.browser-bar { height:48px; background:linear-gradient(90deg,#ead9ed,#dfd4ef); display:flex; align-items:center; padding:0 22px; gap:26px; }
+.dots { display:flex; gap:10px; } .dots i { width:13px; height:13px; display:block; border-radius:50%; background:#e88cad; } .dots i:nth-child(2){background:#f4cb73} .dots i:nth-child(3){background:#9bc56e}
+.browser-title { font-weight:700; font-size:14px; } .browser-nav { margin-left:auto; display:flex; align-items:center; gap:15px; } .counter{font-size:13px}
+.browser-nav button { border:0; background:transparent; color:var(--ink); font-size:27px; cursor:pointer; line-height:1; }
+.content { position:relative; min-height:535px; padding:40px 5%; }
+.slide-one { display:grid; grid-template-columns:32% 43% 22%; align-items:center; gap:2%; }
+.photo-frame { position:relative; background:#fff; padding:10px 10px 18px; border:1px solid #cbb9d5; box-shadow:0 6px 18px #4b315010; }
+.photo-frame img { width:100%; height:100%; display:block; object-fit:cover; }
+.cake-photo { height:365px; transform:rotate(-4deg); } .tape{position:absolute;width:70px;height:22px;top:-10px;left:34%;background:#f2c4dfaa;transform:rotate(-10deg)}
+.photo-heart{position:absolute;right:-15px;bottom:-14px;color:var(--pink);font-size:45px}
+.birthday-copy{padding:8px 0} .tiny-cake{color:var(--pink);font-size:24px;margin-bottom:10px}
+h1{font-family:'Pacifico',cursive;font-weight:400;font-size:clamp(42px,5vw,68px);line-height:1.2;color:#d27ca8;margin:0 0 22px} h1 span{color:#a78ac6} h1 small{font-family:'Quicksand',sans-serif;font-size:25px}
+.birthday-copy p{max-width:440px;font-size:16px;line-height:1.9;letter-spacing:.3px}
+.heart-divider{display:flex;align-items:center;justify-content:center;gap:15px;margin-top:22px;font-size:22px} .heart-divider span{height:1.5px;width:80px;background:var(--ink)}
+.cloud-note{background:#f0e4f3;border-radius:48% 52% 45% 55%;padding:40px 24px;text-align:center;line-height:1.8;transform:rotate(3deg);font-size:15px}
+.sparkle{position:absolute;color:#d98bb5;font-size:32px}.sparkle-one{top:70px;right:8%}.sparkle-two{bottom:60px;right:28%;color:#bda5d4}
+.slide-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 5% 22px;color:#9b82b0;font-size:13px}
+.slide-footer button{border:0;border-radius:12px;background:#e7d6ee;color:#6d568a;padding:11px 18px;font:600 13px 'Quicksand',sans-serif;cursor:pointer;transition:.2s}
+.slide-footer button:hover{background:#d9bde6;transform:translateY(-2px)}
+.slide-two{display:grid;grid-template-columns:25% 48% 25%;align-items:center;gap:1%}
+.thank-you{color:#a36caf;line-height:1.8;letter-spacing:1px;transform:rotate(-5deg)} .thank-you p{font-size:16px}
+.thank-you strong{display:block;margin-top:26px;font-size:28px;line-height:1.3;color:#786092}
+.photo-stack{position:relative;height:380px}.photo-stack figure{position:absolute;width:60%;height:310px;margin:0}
+.photo-stack img{height:calc(100% - 22px)} .photo-stack figcaption{font-size:10px;text-align:center;padding-top:5px}
+.photo-a{left:2%;top:8px;transform:rotate(-6deg);z-index:2}.photo-b{right:0;top:45px;transform:rotate(7deg)}
+/* Heart and text are separated into layers so the message stays inside the outline. */
+.wish-heart{position:relative;width:220px;max-width:100%;height:200px;margin:auto;display:grid;place-items:center}
+.heart-outline{position:absolute;inset:0;width:100%;height:100%;overflow:visible;fill:none;stroke:#d67eae;stroke-width:3;pointer-events:none}
+.wish-message{position:relative;z-index:2;text-align:center;color:#a36caf;font-size:clamp(11px,1.15vw,14px);line-height:1.75;padding:0 24px;margin-top:-4px}
+.wish-message span{font-size:18px}
+.bow{position:absolute;bottom:24px;right:6%;color:#d77ca8;font-size:65px;transform:rotate(-15deg)} .sparkle-three{left:73%;bottom:90px}
+@media(max-width:760px){
+ body{padding:10px}.slide{min-height:auto;border-radius:14px}.browser-bar{padding:0 12px;gap:12px;height:43px}.browser-title{font-size:12px}.browser-nav{gap:7px}.counter{font-size:11px}
+ .content{padding:26px 6%}.slide-one{grid-template-columns:1fr 1.15fr;gap:22px}.cake-photo{height:250px}.birthday-copy p{font-size:13px;line-height:1.7}h1{font-size:clamp(32px,8vw,48px);margin-bottom:12px}.tiny-cake{font-size:18px}
+ .cloud-note{grid-column:1/-1;padding:16px;margin:0 12%;font-size:13px}.heart-divider{margin-top:12px}.heart-divider span{width:40px}
+ .slide-two{grid-template-columns:1fr 1.5fr;gap:18px}.thank-you p{font-size:13px}.thank-you strong{font-size:23px}.photo-stack{height:290px}.photo-stack figure{height:235px;width:66%;padding:7px 7px 14px}
+ .wish-heart{grid-column:1/-1;width:190px;height:170px;margin-top:10px}.wish-message{font-size:13px;padding:0 22px}.bow{display:none}.slide-footer{padding:0 5% 16px;font-size:10px}.slide-footer button{padding:9px 12px;font-size:11px}
+}
+@media(max-width:420px){
+ .slide-one{grid-template-columns:1fr}.cake-photo{height:260px;width:75%;margin:0 auto 12px}.birthday-copy{text-align:center}.birthday-copy p{margin:auto}.cloud-note{margin:10px 8%}
+ .slide-two{grid-template-columns:1fr}.thank-you{text-align:center}.thank-you p{margin-bottom:8px}.thank-you strong{margin-top:10px}.photo-stack{width:100%}.wish-heart{margin-top:0}
+ .slide-footer>span{display:none}
+}
